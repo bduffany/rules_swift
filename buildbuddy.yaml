@@ -1,0 +1,9 @@
+actions:
+  - name: "Test all (M1)"
+    os: darwin
+    arch: arm64
+    triggers:
+      push: { branches: [ master ] }
+      pull_request: { branches: [ master ] }
+    bazel_commands:
+      - test //... --build_metadata=ROLE=CI
